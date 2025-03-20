@@ -38,7 +38,7 @@ import {
       const marketplaceModuleService: MarketplaceModuleService = 
         container.resolve(MARKETPLACE_MODULE)
   
-      marketplaceModuleService.deleteVendorAdmins(vendorAdminId)
+      await marketplaceModuleService.deleteVendorAdmins(vendorAdminId)
     }
   )
   

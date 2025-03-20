@@ -29,7 +29,7 @@ import {
       const marketplaceModuleService: MarketplaceModuleService = 
         container.resolve(MARKETPLACE_MODULE)
   
-        marketplaceModuleService.deleteVendors(vendorId)
+      await marketplaceModuleService.deleteVendors(vendorId)
     }
   )
   

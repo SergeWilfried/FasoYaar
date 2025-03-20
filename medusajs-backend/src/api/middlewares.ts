@@ -28,6 +28,7 @@ import {
         matcher: "/vendors/products",
         method: ["POST"],
         middlewares: [
+          authenticate("vendor", ["session", "bearer"]),
           validateAndTransformBody(AdminCreateProduct),
         ],
       },  
