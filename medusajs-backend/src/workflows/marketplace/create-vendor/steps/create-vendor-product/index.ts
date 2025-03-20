@@ -55,6 +55,9 @@ const createVendorProductWorkflow = createWorkflow(
           id: input.vendor_admin_id,
         },
       }).config({ name: "retrieve-vendor-admins" })
+    if (!vendorAdmins.length) {
+      throw new Error("No matching vendor admin found for the provided vendor_admin_id.")
+    }
       
       const linksToCreate = transform({
         input,
