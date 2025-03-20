@@ -71,13 +71,10 @@ const plugins = [
         port: ADMIN_APP_PORT,
       },
     },
-  },
-  {
-    resolve: "./src/modules/marketplace",
-  },
+  }
 ];
 
-const modules = {
+const modules = [
   /*eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
@@ -90,7 +87,11 @@ const modules = {
       redisUrl: REDIS_URL
     }
   },*/
-};
+  ,
+  {
+    resolve: "./src/modules/marketplace",
+  },
+];
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
 const projectConfig = {
