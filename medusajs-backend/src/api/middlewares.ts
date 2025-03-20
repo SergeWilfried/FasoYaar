@@ -18,19 +18,19 @@ import {
           validateAndTransformBody(PostVendorCreateSchema),
         ],
       },
+    {
+     matcher: "/vendors/products",
+     method: ["POST"],
+     middlewares: [
+       authenticate("vendor", ["session", "bearer"]),
+       validateAndTransformBody(AdminCreateProduct),
+     ],
+   },
       {
         matcher: "/vendors/*",
         middlewares: [
           authenticate("vendor", ["session", "bearer"]),
         ],
-      },
-      {
-        matcher: "/vendors/products",
-        method: ["POST"],
-        middlewares: [
-          authenticate("vendor", ["session", "bearer"]),
-          validateAndTransformBody(AdminCreateProduct),
-        ],
-      },  
+      } 
     ],
   })
