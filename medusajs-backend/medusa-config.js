@@ -72,6 +72,9 @@ const plugins = [
       },
     },
   },
+  {
+    resolve: "./src/modules/marketplace",
+  },
 ];
 
 const modules = {
