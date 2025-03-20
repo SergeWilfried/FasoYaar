@@ -59,8 +59,12 @@ import {
         },
       })
   
+      const retrievedVendor = vendorWithAdmin[0]
+      if (!retrievedVendor) {
+        throw new Error("Vendor creation error: no vendor retrieved")
+      }
       return new WorkflowResponse({
-        vendor: vendorWithAdmin[0],
+        vendor: retrievedVendor,
       })
     }
   )
